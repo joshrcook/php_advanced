@@ -32,12 +32,20 @@ function name_sort($x, $y) {
 // Grade sorting function:
 // Sort in DESCENDING order!
 function grade_sort($x, $y) {
+	echo 'x = ' . $x['grade'] . ' y = ' . $y['grade'] . '<br />';
 	return ($x['grade'] < $y['grade']);
 }
 
 // print the array as is: 
 echo '<h2>Array as is</h2><pre>' . print_r($students, 1) . '</pre>';
 
+// Sort by name: 
+uasort($students, 'name_sort');
+echo '<h2>Array sorted by name</h2><pre>' . print_r($students, 1) . '</pre>';
+
+// Sort by grade:
+uasort($students, 'grade_sort');
+echo '<h2>Array sorted by grade</h2><pre>' . print_r($students, 1) . '</pre>';
 
 ?>
 </body>
